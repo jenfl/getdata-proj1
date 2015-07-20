@@ -11,9 +11,9 @@ Resulting data frame consists of the following for each subject/activity/mean an
 * Subject (factor, values 1-30)   
 * Activity (factor, values LAYING, SITTING, STANDING, WALKING, WALKING DOWNSTAIRS, WALKING UPSTAIRS)  
 * VariableName (factor, values are the names of each observation variable that we are averaging)  
-* VariableMean (numeric, the average of each observation variable per suject/activity)  
+* Many columns containing the **observation mean or std** (numeric, the average of each observation variable per suject/activity)  
 
-This is the long form as mentioned in the rubric as either long or wide form is acceptable, see https://class.coursera.org/getdata-030/forum/thread?thread_id=107 for discussion.  
+This is the wide form as mentioned in the rubric as either long or wide form is acceptable, see https://class.coursera.org/getdata-030/forum/thread?thread_id=107 for discussion.  
 
 From the original data:  
 

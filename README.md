@@ -25,7 +25,7 @@ The tidy data set consists of the following columns:
 * VariableName (factor, values are the names of each observation variable that we are averaging)
 * VariableMean (numeric, the average of each observation variable per suject/activity)
 
-This is the long form as mentioned in the rubric as either long or wide form is acceptable, see https://class.coursera.org/getdata-030/forum/thread?thread_id=107 for discussion.
+This is the wide form as mentioned in the rubric as either long or wide form is acceptable, see https://class.coursera.org/getdata-030/forum/thread?thread_id=107 for discussion.
 
 The input data from the *UCI HAR Dataset* is transformed via the run_analysis script through the following steps:  
 
@@ -38,5 +38,6 @@ The input data from the *UCI HAR Dataset* is transformed via the run_analysis sc
 7. The test and training datasets are combined.  
 8. Subject ID is converted to a factor.  
 9. The full dataset is reduced, keeping only the columns for Subject ID, Activity ID, and the mean and std for the variables estimated from the signals.  
-10. For each subject/activity/feature combination, a mean is produced and stored in the tidyData data frame.  
+10. For each subject/activity/feature combination, a mean is produced and stored in the longData data frame.  
+11. Make the long data into a wide table.
 11. Write as output the tidy data set.  

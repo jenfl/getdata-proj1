@@ -1,3 +1,5 @@
+library(reshape2)
+
 # Read in labels for activity and columns
 activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt", stringsAsFactors=FALSE)
 features <- read.table("UCI HAR Dataset/features.txt", stringsAsFactors=FALSE)
@@ -66,10 +68,12 @@ for (subj in levels(reducedDataSet$Subject.ID)) {
 }
 
 # Create a tidy data frame from the vectors we populated
-tidyData <- data.frame(Subject=SubjectVector, 
+longData <- data.frame(Subject=SubjectVector, 
                        Activity=ActivityVector,
                        VariableName=VariableNameVector,
                        VariableMean=VariableMeanVector)
+# Make it wide data
+wideData <- dcast(tidyData, Subject+Activity ~ VariableName, value.var="VariableMean")
 
 # Write out the tidy data
-write.table(tidyData, row.name=FALSE)
+write.table(wideData, row.name=FALSE)
