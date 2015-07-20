@@ -73,7 +73,7 @@ longData <- data.frame(Subject=SubjectVector,
                        VariableName=VariableNameVector,
                        VariableMean=VariableMeanVector)
 # Make it wide data
-wideData <- dcast(tidyData, Subject+Activity ~ VariableName, value.var="VariableMean")
+wideData <- dcast(longData, Subject+Activity ~ VariableName, value.var="VariableMean")
 
 # Write out the tidy data
-write.table(wideData, row.name=FALSE)
+write.table(wideData, row.name=FALSE, file="tidyUCIHAR.txt")
